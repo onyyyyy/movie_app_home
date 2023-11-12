@@ -1,4 +1,6 @@
+import { useEffect } from "react";
 import styled from "styled-components";
+import { nowPlaying } from "../../api";
 
 const MainBanner = styled.div`
   height: 80vh;
@@ -38,6 +40,16 @@ const BlackBg = styled.div`
 `;
 
 export const Home = () => {
+  useEffect(() => {
+    (async () => {
+      try {
+        const data = await nowPlaying();
+        console.log(data);
+      } catch (error) {
+        console.log("에러:" + error);
+      }
+    })();
+  }, []);
   return (
     <MainBanner>
       <BlackBg />
