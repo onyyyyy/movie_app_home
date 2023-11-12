@@ -1,17 +1,17 @@
 ## 설치항목
 
-[] styled-components
-[] react-router-dom
-[] styled-reset
+[X] styled-components
+[X] react-router-dom
+[X] styled-reset
 [] react-helmet
-[] font-awesome
+[X] font-awesome
 [] react-hook-form
 
 ## TODO
 
-[] router 설정
-[] 각 component 제작
+[X] router 설정
+[X] 각 component 제작
 [] api 설정
-[] Home ui 및 전체 구성
+[X] Home ui 및 전체 구성
 [] Detail ui 및 전체 구성
 [] Search ui 및 전체 구성
