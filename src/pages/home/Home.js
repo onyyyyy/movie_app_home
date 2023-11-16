@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { nowPlaying } from "../../api";
 import { Banner } from "./Banner";
+import { ShowMovie } from "./ShowMovie";
 
 export const Home = () => {
   const [nowPlayingData, setNowPlayingData] = useState();
@@ -26,7 +27,14 @@ export const Home = () => {
       {isLoading ? (
         "loading..."
       ) : (
-        <>{nowPlayingData && <Banner BannerData={nowPlayingData[0]} />}</>
+        <>
+          {nowPlayingData && (
+            <>
+              <Banner bannerData={nowPlayingData[0]} />
+              <ShowMovie showMovieData={nowPlayingData} />
+            </>
+          )}
+        </>
       )}
     </>
   );
