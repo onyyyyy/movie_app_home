@@ -4,6 +4,7 @@ import { Banner } from "./Banner";
 import { ShowMovie } from "./ShowMovie";
 import { Layout } from "../../components/Layout";
 import { Loading } from "../../components/Loading";
+import { PageTitle } from "../../components/PageTitle";
 
 export const Home = () => {
   const [nowPlayingData, setNowPlayingData] = useState();
@@ -48,6 +49,7 @@ export const Home = () => {
         <>
           {nowPlayingData && (
             <>
+              <PageTitle titleName={"HOME"} />
               <Banner bannerData={nowPlayingData[0]} />
               <Layout>
                 <ShowMovie
