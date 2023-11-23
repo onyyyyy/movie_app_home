@@ -33,6 +33,6 @@ export const movieDetail = (id) => {
 };
 
 export const movieSearch = (keyword) => {
-  const searchUrl = baseUrl + `search/movie?query=${keyword}&language=ko-ke`;
-  fetch(searchUrl, options).then((res) => res.json());
+  const searchUrl = baseUrl + `search/movie?query=${keyword}&language=ko-kr`;
+  return fetch(searchUrl, options).then((res) => res.json());
 };

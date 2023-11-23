@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import styled from "styled-components";
 import { movieSearch } from "../../api";
+import { IMG_URL } from "../../constants";
 
 const Wrap = styled.div`
   padding: 100px 100px;
@@ -19,22 +20,34 @@ const Form = styled.form`
   background-color: white;
   border-radius: 10px;
   margin: 10px 0 20px 0;
+  color: #333;
 `;
 
 const Input = styled.input`
+  color: #333;
   all: unset;
   width: 100%;
   height: 50px;
   display: block;
+  border-radius: 10px;
 `;
 
-const ConWrap = styled.div``;
+const ConWrap = styled.div`
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  column-gap: 30px;
+  row-gap: 20px;
+`;
 
 const Con = styled.div``;
 
-const Bg = styled.div``;
+const Bg = styled.div`
+  height: 300px;
+  background: url(${IMG_URL}/w500/${(props) => props.$bgUrl}) no-repeat center /
+    cover;
+`;
 
-const MovieTitle = styled.div``;
+const MovieTitle = styled.h4``;
 
 export const Search = () => {
   const {
@@ -44,6 +57,7 @@ export const Search = () => {
   } = useForm({ mode: "onSubmit" });
 
   const [term, setTerm] = useState();
+
   const SearchHandler = async (data) => {
     const { search: keyword } = data;
     try {

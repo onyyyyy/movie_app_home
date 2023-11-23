@@ -6,6 +6,7 @@ const MainBanner = styled.div`
   background-color: lightgray;
   background: url(${IMG_URL}/original/${(props) => props.$bgUrl}) no-repeat
     center / cover;
+  position: relative;
   padding: 400px 5%;
   h3,
   p {
